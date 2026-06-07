@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — Msidcom Parent</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F7F5F0;
+    --surface: #FFFFFF;
+    --accent: #2563EB;
+    --accent-light: #EFF6FF;
+    --text: #1A1A1A;
+    --text-muted: #6B6B6B;
+    --text-faint: #9CA3AF;
+    --border: rgba(0,0,0,0.08);
+    --radius: 16px;
+    --font-display: 'DM Serif Display', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .logo-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--accent);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo-icon svg { width: 20px; height: 20px; fill: none; stroke: white; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .logo-name {
+    font-family: var(--font-display);
+    font-size: 18px;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+  .logo-badge {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+  .contact-btn {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-light);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .contact-btn:hover { background: #DBEAFE; }
+
+  /* HERO */
+  .hero {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 72px 24px 56px;
+    text-align: center;
+  }
+  .hero-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 6vw, 52px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero p {
+    font-size: 17px;
+    color: var(--text-muted);
+    max-width: 480px;
+    margin: 0 auto;
+    font-weight: 300;
+  }
+
+  /* SEARCH */
+  .search-wrap {
+    max-width: 520px;
+    margin: 40px auto 0;
+    position: relative;
+  }
+  .search-wrap svg {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    stroke: var(--text-faint);
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    pointer-events: none;
+  }
+  .search-wrap input {
+    width: 100%;
+    padding: 14px 16px 14px 44px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .search-wrap input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+  }
+  .search-wrap input::placeholder { color: var(--text-faint); }
+
+  /* MAIN */
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* SECTION TITLE */
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 16px;
+    margin-top: 48px;
+  }
+
+  /* FAQ */
+  .faq-list { display: flex; flex-direction: column; gap: 2px; }
+  .faq-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.15s;
+  }
+  .faq-item:hover { border-color: rgba(0,0,0,0.15); }
+  .faq-item.open { border-color: var(--accent); }
+  .faq-q {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    cursor: pointer;
+    user-select: none;
+    gap: 12px;
+  }
+  .faq-q span {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.4;
+  }
+  .faq-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    background: var(--bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, transform 0.2s;
+  }
+  .faq-item.open .faq-icon {
+    background: var(--accent-light);
+    transform: rotate(45deg);
+  }
+  .faq-icon svg { width: 14px; height: 14px; stroke: var(--text-muted); fill: none; stroke-width: 2.5; stroke-linecap: round; }
+  .faq-item.open .faq-icon svg { stroke: var(--accent); }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.2s;
+    padding: 0 20px;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+  .faq-item.open .faq-a {
+    max-height: 300px;
+    padding: 0 20px 18px;
+  }
+
+  /* CONTACT CARD */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  @media (max-width: 500px) { .contact-grid { grid-template-columns: 1fr; } }
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .contact-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 16px rgba(37,99,235,0.08);
+  }
+  .contact-card-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--accent-light);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4px;
+  }
+  .contact-card-icon svg { width: 20px; height: 20px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .contact-card h3 { font-size: 15px; font-weight: 500; }
+  .contact-card p { font-size: 13px; color: var(--text-muted); }
+  .contact-card a { font-size: 14px; font-weight: 500; color: var(--accent); text-decoration: none; word-break: break-all; }
+  .contact-card a:hover { text-decoration: underline; }
+
+  /* INFO STRIP */
+  .info-strip {
+    background: var(--accent-light);
+    border: 1px solid rgba(37,99,235,0.15);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-top: 12px;
+  }
+  .info-strip svg { width: 20px; height: 20px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; margin-top: 1px; }
+  .info-strip p { font-size: 14px; color: #1D4ED8; line-height: 1.6; }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 24px;
+    text-align: center;
+  }
+  footer p { font-size: 13px; color: var(--text-faint); }
+  footer a { color: var(--text-muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+
+  /* SEARCH HIDE */
+  .faq-item.hidden { display: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <span class="logo-name">Msidcom</span>
+      <span class="logo-badge">Parent</span>
+    </a>
+    <a class="contact-btn" href="mailto:support@msidcom.com">Nous contacter</a>
+  </div>
+</header>
+
+<div class="hero">
+  <span class="hero-tag">Centre d'aide</span>
+  <h1>Comment pouvons-nous<br>vous <em>aider ?</em></h1>
+  <p>Trouvez rapidement une réponse à vos questions sur l'application Msidcom Parent.</p>
+  <div class="search-wrap">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" id="searchInput" placeholder="Rechercher une question..." oninput="filterFAQ(this.value)" autocomplete="off">
+  </div>
+</div>
+
+<main>
+
+  <p class="section-label">Questions fréquentes</p>
+
+  <div class="faq-list" id="faqList">
+
+    <div class="faq-item" data-q="comment me connecter inscription compte">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>Comment me connecter à l'application ?</span>
+        <div class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></div>
+      </div>
+      <div class="faq-a">Téléchargez Msidcom Parent sur l'App Store, puis connectez-vous avec les identifiants fournis par l'établissement scolaire de votre enfant. Si vous ne les avez pas reçus, contactez directement l'administration de l'école.</div>
+    </div>
+
+    <div class="faq-item" data-q="notes résultats bulletins matières moyennes">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>Où trouver les notes de mon enfant ?</span>
+        <div class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></div>
+      </div>
+      <div class="faq-a">Depuis l'écran d'accueil, appuyez sur la carte de votre enfant puis sur "Notes". Vous y trouverez les résultats par matière, les moyennes et l'historique des évaluations. Les notes sont mises à jour en temps réel par l'établissement.</div>
+    </div>
+
+    <div class="faq-item" data-q="absence justifier notification alerte">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>Comment suis-je informé d'une absence ?</span>
+        <div class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></div>
+      </div>
+      <div class="faq-a">Vous recevez une notification push dès qu'une absence est enregistrée par l'établissement. Rendez-vous ensuite dans l'onglet "Absences" pour consulter le détail et soumettre un justificatif si nécessaire.</div>
+    </div>
+
+    <div class="faq-item" data-q="emploi du temps cours horaires semaine">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>Comment consulter l'emploi du temps ?</span>
+        <div class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></div>
+      </div>
+      <div class="faq-a">L'emploi du temps est accessible depuis l'onglet "Agenda" dans le menu principal. Il affiche les cours de la semaine en cours. Appuyez sur les flèches pour naviguer vers les semaines suivantes ou précédentes.</div>
+    </div>
+
+    <div class="faq-item" data-q="sortie scolaire autorisation événement validation">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>Comment autoriser une sortie scolaire ?</span>
+        <div class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></div>
+      </div>
+      <div class="faq-a">Quand une sortie est planifiée, vous recevez une notification. Ouvrez l'application, rendez-vous dans "Événements", consultez les détails de la sortie et appuyez sur "Autoriser". Votre accord est transmis instantanément à l'établissement.</div>
+    </div>
+
+    <div class="faq-item" data-q="convocation réunion message établissement">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>Que faire si je reçois une convocation ?</span>
+        <div class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></div>
+      </div>
+      <div class="faq-a">Les convocations apparaissent dans l'onglet "Messages" avec la date, l'heure et le motif. Contactez directement l'établissement pour confirmer votre présence ou obtenir plus d'informations.</div>
+    </div>
+
+    <div class="faq-item" data-q="notification push alerte désactiver activer">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>Je ne reçois pas les notifications, que faire ?</span>
+        <div class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></div>
+      </div>
+      <div class="faq-a">Vérifiez que les notifications sont activées pour Msidcom Parent dans les Réglages iOS : Réglages → Notifications → Msidcom Parent → Autoriser les notifications. Assurez-vous également d'être connecté à Internet.</div>
+    </div>
+
+    <div class="faq-item" data-q="plusieurs enfants compte famille">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>Puis-je suivre plusieurs enfants ?</span>
+        <div class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></div>
+      </div>
+      <div class="faq-a">Oui, si vous avez plusieurs enfants dans le même établissement utilisant Msidcom, ils apparaissent tous sur l'écran d'accueil. Appuyez sur la carte de l'enfant concerné pour accéder à son suivi individuel.</div>
+    </div>
+
+    <div class="faq-item" data-q="mot de passe oublié réinitialiser connexion">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>J'ai oublié mon mot de passe</span>
+        <div class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></div>
+      </div>
+      <div class="faq-a">La réinitialisation du mot de passe est gérée par l'établissement scolaire. Contactez l'administration de l'école en leur indiquant votre nom et le nom de votre enfant pour obtenir de nouveaux identifiants.</div>
+    </div>
+
+  </div>
+
+  <div class="info-strip" id="noResult" style="display:none;">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+    <p>Aucune question ne correspond à votre recherche. N'hésitez pas à nous contacter directement par email, nous répondons sous 48h.</p>
+  </div>
+
+  <p class="section-label">Nous contacter</p>
+
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="contact-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <h3>Email</h3>
+      <p>Réponse sous 48h ouvrées</p>
+      <a href="mailto:support@msidcom.com">support@msidcom.com</a>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <h3>Signaler un bug</h3>
+      <p>Problème technique dans l'app</p>
+      <a href="mailto:support@msidcom.com?subject=Bug Report - Msidcom Parent">Envoyer un rapport</a>
+    </div>
+  </div>
+
+  <div class="info-strip" style="margin-top: 24px;">
+    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    <p>Vos données et celles de vos enfants sont traitées de manière sécurisée et confidentielle, conformément au RGPD. Consultez notre <a href="privacy.html" style="color: #1D4ED8; font-weight: 500;">politique de confidentialité</a> pour plus d'informations.</p>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2025 Msidcom · <a href="privacy.html">Politique de confidentialité</a> · Application disponible sur <a href="#">App Store</a></p>
+</footer>
+
+<script>
+function toggleFaq(el) {
+  const item = el.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+function filterFAQ(val) {
+  const q = val.toLowerCase().trim();
+  const items = document.querySelectorAll('.faq-item');
+  let found = 0;
+  items.forEach(item => {
+    const text = (item.querySelector('.faq-q span').textContent + ' ' + (item.dataset.q || '') + ' ' + item.querySelector('.faq-a').textContent).toLowerCase();
+    const match = !q || text.includes(q);
+    item.classList.toggle('hidden', !match);
+    if (match) found++;
+  });
+  document.getElementById('noResult').style.display = (!q || found > 0) ? 'none' : 'flex';
+}
+</script>
+</body>
+</html>
