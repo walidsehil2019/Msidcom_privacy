@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de Confidentialité — msidcom Parent</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary:   #2563eb;
+      --primary-dk:#1d4ed8;
+      --surface:   #ffffff;
+      --bg:        #f1f5f9;
+      --text:      #1e293b;
+      --muted:     #64748b;
+      --border:    #e2e8f0;
+      --radius:    10px;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 15px;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 60%, #3b82f6 100%);
+      color: #fff;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    header .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    header .logo svg { width: 42px; height: 42px; fill: #fff; opacity: .92; }
+    header h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; letter-spacing: -.5px; }
+    header p  { opacity: .82; margin-top: 8px; font-size: .95rem; }
+    .badge {
+      display: inline-block;
+      margin-top: 16px;
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: .78rem;
+      letter-spacing: .4px;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    /* ── Language switcher ── */
+    .lang-bar {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 32px;
+      justify-content: flex-end;
+    }
+    .lang-bar button {
+      padding: 6px 18px;
+      border: 1.5px solid var(--primary);
+      border-radius: 20px;
+      background: transparent;
+      color: var(--primary);
+      font-size: .82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .lang-bar button.active,
+    .lang-bar button:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    /* ── Apple nutrition card ── */
+    .nutrition-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .nutrition-card {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .nutrition-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--primary);
+    }
+    .nutrition-card.yellow::before { background: #f59e0b; }
+    .nutrition-card.green::before  { background: #10b981; }
+    .nutrition-card .icon {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .nutrition-card h3 { font-size: .9rem; font-weight: 700; margin-bottom: 6px; }
+    .nutrition-card .tag {
+      display: inline-block;
+      font-size: .7rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .tag-linked   { background: #dbeafe; color: #1d4ed8; }
+    .tag-unlinked { background: #d1fae5; color: #065f46; }
+    .tag-notrack  { background: #f1f5f9; color: #475569; }
+    .nutrition-card ul { padding-left: 16px; font-size: .82rem; color: #475569; }
+    .nutrition-card li { margin: 3px 0; }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: var(--radius);
+      padding: 22px 28px;
+      margin-bottom: 36px;
+    }
+    .toc h2 { font-size: .9rem; text-transform: uppercase; letter-spacing: .8px; color: var(--muted); margin-bottom: 14px; }
+    .toc ol { padding-left: 20px; }
+    .toc li { margin: 5px 0; }
+    .toc a  { color: var(--primary); text-decoration: none; font-size: .92rem; }
+    .toc a:hover { text-decoration: underline; }
+
+    /* ── Sections ── */
+    section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 20px;
+      scroll-margin-top: 24px;
+    }
+    section h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    section h2 .num {
+      background: var(--primary);
+      color: #fff;
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .78rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    section p  { margin-bottom: 10px; color: #334155; }
+    section p:last-child { margin-bottom: 0; }
+    section ul, section ol { padding-left: 22px; margin: 8px 0 10px; }
+    section li { margin: 5px 0; color: #334155; }
+    section strong { color: var(--text); }
+
+    /* ── Highlight box ── */
+    .highlight {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 12px 0;
+      font-size: .93rem;
+    }
+    .highlight.warn {
+      background: #fffbeb;
+      border-color: #fde68a;
+    }
+    .highlight.green {
+      background: #f0fdf4;
+      border-color: #bbf7d0;
+    }
+
+    /* ── Table ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .88rem;
+      margin: 14px 0;
+    }
+    .data-table th {
+      background: #f8fafc;
+      text-align: left;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      font-weight: 600;
+      color: var(--muted);
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+    .data-table td {
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .data-table tr:hover td { background: #f8fafc; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      color: var(--muted);
+      font-size: .82rem;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--primary); text-decoration: none; }
+
+    /* ── RTL Arabic ── */
+    [lang="ar"] { direction: rtl; }
+    [lang="ar"] .toc ol,
+    [lang="ar"] section ul,
+    [lang="ar"] section ol { padding-left: 0; padding-right: 22px; }
+    [lang="ar"] .lang-bar { justify-content: flex-start; }
+    [lang="ar"] section h2 { flex-direction: row-reverse; }
+    [lang="ar"] .toc { border-left: none; border-right: 4px solid var(--primary); }
+    [lang="ar"] .nutrition-card ul { padding-left: 0; padding-right: 16px; }
+    [lang="ar"] .data-table th,
+    [lang="ar"] .data-table td { text-align: right; }
+
+    @media (max-width: 600px) {
+      section { padding: 20px 18px; }
+      .toc    { padding: 16px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm-7 8.34V15l7 3.84 7-3.84v-3.66L12 15l-7-3.66z"/>
+    </svg>
+    <span style="font-size:1.4rem;font-weight:700;letter-spacing:-.5px;">msidcom</span>
+  </div>
+  <h1>Politique de Confidentialité</h1>
+  <p>msidcom Parent Application</p>
+  <span class="badge">En vigueur le : 6 juin 2026</span>
+</header>
+
+<div class="container" id="root">
+
+  <div class="lang-bar">
+    <button onclick="setLang('fr')" class="active">Français</button>
+    <button onclick="setLang('en')">English</button>
+    <button onclick="setLang('ar')">العربية</button>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       FRENCH
+  ══════════════════════════════════════ -->
+  <div id="lang-fr">
+
+    <!-- Apple Nutrition Labels -->
+    <section style="border-color: #bfdbfe;">
+      <h2 style="color:#1d4ed8; font-size:1rem; text-transform:uppercase; letter-spacing:.6px;">
+        Données collectées — Résumé App Store (Apple)
+      </h2>
+      <p style="font-size:.88rem; color:var(--muted); margin-bottom:16px;">
+        Conformément aux exigences d'Apple, voici les catégories de données que cette application collecte et leur usage.
+      </p>
+
+      <div class="nutrition-grid">
+
+        <div class="nutrition-card">
+          <span class="icon">👤</span>
+          <h3>Compte utilisateur</h3>
+          <span class="tag tag-linked">Lié à l'identité</span>
+          <ul>
+            <li>Nom et prénom</li>
+            <li>Adresse e-mail</li>
+            <li>Numéro de téléphone</li>
+            <li>Adresse postale</li>
+            <li>Mot de passe (chiffré)</li>
+            <li>Photo de profil</li>
+          </ul>
+        </div>
+
+        <div class="nutrition-card yellow">
+          <span class="icon">📷</span>
+          <h3>Photos / Caméra</h3>
+          <span class="tag tag-linked">Lié à l'identité</span>
+          <ul>
+            <li>Photo de profil (saisie utilisateur)</li>
+            <li>Accès caméra pour prise de photo uniquement</li>
+            <li>Aucune photo stockée en dehors du profil</li>
+          </ul>
+        </div>
+
+        <div class="nutrition-card green">
+          <span class="icon">📊</span>
+          <h3>Analytics</h3>
+          <span class="tag tag-unlinked">Non lié à l'identité</span>
+          <ul>
+            <li>Événements d'utilisation (Firebase)</li>
+            <li>Performances de l'app</li>
+            <li>Rapports de plantage</li>
+            <li>Données anonymisées</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="highlight green">
+        Nous ne collectons <strong>aucune donnée à des fins publicitaires</strong>. Aucune donnée n'est partagée avec des tiers à des fins commerciales. Les données scolaires des enfants sont gérées exclusivement par l'établissement scolaire.
+      </div>
+    </section>
+
+    <div class="toc">
+      <h2>Sommaire</h2>
+      <ol>
+        <li><a href="#fr-p1">Responsable du traitement</a></li>
+        <li><a href="#fr-p2">Données collectées</a></li>
+        <li><a href="#fr-p3">Compte utilisateur</a></li>
+        <li><a href="#fr-p4">Photos et accès à la caméra</a></li>
+        <li><a href="#fr-p5">Analytics et performances</a></li>
+        <li><a href="#fr-p6">Données des enfants (mineurs)</a></li>
+        <li><a href="#fr-p7">Notifications push</a></li>
+        <li><a href="#fr-p8">Base légale du traitement</a></li>
+        <li><a href="#fr-p9">Partage des données</a></li>
+        <li><a href="#fr-p10">Conservation des données</a></li>
+        <li><a href="#fr-p11">Vos droits</a></li>
+        <li><a href="#fr-p12">Sécurité</a></li>
+        <li><a href="#fr-p13">Modifications</a></li>
+        <li><a href="#fr-p14">Contact</a></li>
+      </ol>
+    </div>
+
+    <section id="fr-p1">
+      <h2><span class="num">1</span> Responsable du traitement</h2>
+      <p><strong>msidcom</strong> est le responsable du traitement des données personnelles collectées via l'application msidcom Parent. Pour toute question relative à cette politique, contactez-nous à : <a href="mailto:support@msidcom.com">support@msidcom.com</a>.</p>
+    </section>
+
+    <section id="fr-p2">
+      <h2><span class="num">2</span> Données collectées</h2>
+      <p>Nous collectons uniquement les données nécessaires au bon fonctionnement du service. Ces données se répartissent en trois catégories principales :</p>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Catégorie</th>
+            <th>Type de donnée</th>
+            <th>Finalité</th>
+            <th>Lié à l'identité</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Compte utilisateur</strong></td>
+            <td>Nom, e-mail, téléphone, adresse, mot de passe, photo</td>
+            <td>Authentification et profil</td>
+            <td>Oui</td>
+          </tr>
+          <tr>
+            <td><strong>Photos / Caméra</strong></td>
+            <td>Photo de profil uniquement</td>
+            <td>Personnalisation du profil</td>
+            <td>Oui</td>
+          </tr>
+          <tr>
+            <td><strong>Analytics</strong></td>
+            <td>Événements d'utilisation, crashs, performances</td>
+            <td>Amélioration de l'app</td>
+            <td>Non (anonymisé)</td>
+          </tr>
+          <tr>
+            <td><strong>Token FCM</strong></td>
+            <td>Identifiant d'appareil Firebase</td>
+            <td>Notifications push</td>
+            <td>Lié au compte</td>
+          </tr>
+          <tr>
+            <td><strong>Données scolaires</strong></td>
+            <td>Notes, absences, emploi du temps, messages</td>
+            <td>Affichage des informations scolaires</td>
+            <td>Géré par l'école</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="fr-p3">
+      <h2><span class="num">3</span> Compte utilisateur</h2>
+      <p>Lors de la création ou de l'utilisation de votre compte, nous collectons :</p>
+      <ul>
+        <li><strong>Nom et prénom</strong> : pour identifier l'utilisateur dans l'application</li>
+        <li><strong>Adresse e-mail</strong> : pour l'authentification et les communications importantes</li>
+        <li><strong>Numéro de téléphone</strong> : pour les contacts d'urgence et les notifications SMS</li>
+        <li><strong>Adresse postale</strong> : fournie facultativement pour le profil</li>
+        <li><strong>Mot de passe</strong> : stocké sous forme hachée et chiffrée, jamais en clair</li>
+        <li><strong>Photo de profil</strong> : chargée volontairement par l'utilisateur</li>
+      </ul>
+      <div class="highlight">
+        Ces données sont utilisées <strong>exclusivement</strong> pour fournir le service. Elles ne sont jamais utilisées à des fins publicitaires ou de profilage commercial.
+      </div>
+    </section>
+
+    <section id="fr-p4">
+      <h2><span class="num">4</span> Photos et accès à la caméra</h2>
+      <p>L'application peut demander l'accès à votre caméra et à votre galerie photo <strong>uniquement</strong> dans le cas suivant :</p>
+      <ul>
+        <li>Mise à jour de la photo de profil de l'utilisateur</li>
+      </ul>
+      <p>Nous n'accédons jamais à la caméra en arrière-plan. L'accès est déclenché uniquement par une action explicite de l'utilisateur.</p>
+      <p>La photo de profil téléchargée est stockée sur les serveurs sécurisés de msidcom et associée au compte de l'utilisateur. Elle n'est pas partagée avec des tiers.</p>
+      <div class="highlight warn">
+        Vous pouvez révoquer l'accès à la caméra à tout moment via les réglages de votre appareil iOS/Android, sans affecter les autres fonctionnalités de l'application.
+      </div>
+    </section>
+
+    <section id="fr-p5">
+      <h2><span class="num">5</span> Analytics et performances</h2>
+      <p>Nous utilisons <strong>Firebase Analytics</strong> (Google) pour collecter des données anonymisées sur l'utilisation de l'application afin d'améliorer l'expérience utilisateur. Les données collectées comprennent :</p>
+      <ul>
+        <li>Événements d'utilisation (écrans consultés, actions effectuées)</li>
+        <li>Rapports de plantage (Crashlytics)</li>
+        <li>Performances de l'application (temps de chargement, erreurs réseau)</li>
+        <li>Informations sur l'appareil : modèle, version OS, langue (anonymisé)</li>
+      </ul>
+      <div class="highlight green">
+        Ces données sont <strong>anonymisées</strong> et ne permettent pas d'identifier personnellement un utilisateur. Elles ne sont jamais croisées avec les données du compte utilisateur.
+      </div>
+      <p>Pour en savoir plus sur les pratiques de confidentialité de Firebase, consultez : <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></p>
+    </section>
+
+    <section id="fr-p6">
+      <h2><span class="num">6</span> Données des enfants (mineurs)</h2>
+      <p>L'application affiche des données académiques relatives à des mineurs (vos enfants). Ces données incluent notes, absences, emplois du temps, et observations pédagogiques.</p>
+      <p><strong>Important :</strong></p>
+      <ul>
+        <li>Ces données sont stockées et gérées par l'établissement scolaire, pas directement par msidcom</li>
+        <li>msidcom agit comme sous-traitant de l'école pour l'affichage de ces données</li>
+        <li>Nous ne collectons pas de données sur les enfants au-delà de ce qui est nécessaire pour afficher les informations scolaires</li>
+        <li>Les données des élèves ne sont jamais utilisées à des fins de marketing ou d'analyse comportementale</li>
+        <li>Toute rectification des données scolaires doit être demandée à l'établissement scolaire directement</li>
+      </ul>
+    </section>
+
+    <section id="fr-p7">
+      <h2><span class="num">7</span> Notifications push</h2>
+      <p>Nous utilisons <strong>Firebase Cloud Messaging (FCM)</strong> pour envoyer des notifications push. Un token unique est attribué à votre appareil pour recevoir ces notifications. Ce token est :</p>
+      <ul>
+        <li>Associé à votre compte utilisateur</li>
+        <li>Utilisé uniquement pour acheminer les notifications de votre école</li>
+        <li>Jamais partagé avec des annonceurs</li>
+        <li>Supprimé lors de la déconnexion ou de la désinstallation</li>
+      </ul>
+    </section>
+
+    <section id="fr-p8">
+      <h2><span class="num">8</span> Base légale du traitement</h2>
+      <p>Le traitement de vos données repose sur les bases légales suivantes :</p>
+      <ul>
+        <li><strong>Exécution du contrat</strong> : données de compte nécessaires pour fournir le service</li>
+        <li><strong>Intérêt légitime</strong> : analytics anonymisées pour améliorer l'application</li>
+        <li><strong>Consentement</strong> : accès caméra, notifications push (accordés via les permissions de l'appareil)</li>
+        <li><strong>Obligation légale</strong> : conservation de certaines données conformément aux lois applicables</li>
+      </ul>
+    </section>
+
+    <section id="fr-p9">
+      <h2><span class="num">9</span> Partage des données</h2>
+      <p>Nous ne vendons jamais vos données personnelles. Nous pouvons partager des données avec :</p>
+      <ul>
+        <li><strong>Établissements scolaires</strong> : données nécessaires au fonctionnement du service éducatif</li>
+        <li><strong>Firebase / Google</strong> : analytics anonymisées et notifications push</li>
+        <li><strong>Hébergeur</strong> : stockage sécurisé des données sur nos serveurs</li>
+      </ul>
+      <div class="highlight warn">
+        Aucune donnée n'est transmise à des régies publicitaires, brokers de données, ou toute autre entité commerciale tierce.
+      </div>
+    </section>
+
+    <section id="fr-p10">
+      <h2><span class="num">10</span> Conservation des données</h2>
+      <ul>
+        <li><strong>Données de compte</strong> : conservées tant que le compte est actif. Supprimées sur demande ou 12 mois après la désactivation du compte par l'école</li>
+        <li><strong>Photos de profil</strong> : supprimées lors de la suppression du compte</li>
+        <li><strong>Analytics</strong> : conservées 14 mois (politique Firebase par défaut), anonymisées</li>
+        <li><strong>Tokens FCM</strong> : supprimés à la déconnexion ou à la désinstallation</li>
+        <li><strong>Données scolaires</strong> : soumises à la politique de conservation de l'établissement scolaire</li>
+      </ul>
+    </section>
+
+    <section id="fr-p11">
+      <h2><span class="num">11</span> Vos droits</h2>
+      <p>Conformément à la réglementation applicable, vous disposez des droits suivants :</p>
+      <ul>
+        <li><strong>Droit d'accès</strong> : obtenir une copie de vos données personnelles</li>
+        <li><strong>Droit de rectification</strong> : corriger des données inexactes vous concernant</li>
+        <li><strong>Droit à l'effacement</strong> : demander la suppression de votre compte et de vos données</li>
+        <li><strong>Droit d'opposition</strong> : vous opposer à certains traitements</li>
+        <li><strong>Droit à la portabilité</strong> : recevoir vos données dans un format structuré</li>
+      </ul>
+      <p>Pour exercer ces droits, contactez-nous à : <a href="mailto:support@msidcom.com">support@msidcom.com</a></p>
+      <p>Pour les données scolaires (notes, absences…), adressez-vous directement à l'établissement scolaire de votre enfant.</p>
+    </section>
+
+    <section id="fr-p12">
+      <h2><span class="num">12</span> Sécurité</h2>
+      <p>Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données :</p>
+      <ul>
+        <li>Transmission chiffrée via <strong>HTTPS/TLS</strong></li>
+        <li>Mots de passe hachés (jamais stockés en clair)</li>
+        <li>Accès aux données restreint au personnel autorisé</li>
+        <li>Serveurs sécurisés avec accès contrôlé</li>
+        <li>Authentification par jeton (JWT) avec expiration</li>
+      </ul>
+    </section>
+
+    <section id="fr-p13">
+      <h2><span class="num">13</span> Modifications de cette politique</h2>
+      <p>Nous nous réservons le droit de modifier cette politique à tout moment. La date de mise à jour sera indiquée en haut de la page. En cas de modification substantielle, nous vous en informerons via une notification dans l'application.</p>
+    </section>
+
+    <section id="fr-p14">
+      <h2><span class="num">14</span> Contact</h2>
+      <p>Pour toute question relative à cette politique de confidentialité :</p>
+      <ul>
+        <li><strong>E-mail :</strong> <a href="mailto:support@msidcom.com">support@msidcom.com</a></li>
+        <li><strong>Site Web :</strong> <a href="https://msidcom.com" target="_blank" rel="noopener">https://msidcom.com</a></li>
+      </ul>
+    </section>
+
+  </div><!-- /lang-fr -->
+
+
+  <!-- ══════════════════════════════════════
+       ENGLISH
+  ══════════════════════════════════════ -->
+  <div id="lang-en" style="display:none;">
+
+    <section style="border-color: #bfdbfe;">
+      <h2 style="color:#1d4ed8; font-size:1rem; text-transform:uppercase; letter-spacing:.6px;">
+        Data Collected — App Store Summary (Apple)
+      </h2>
+      <p style="font-size:.88rem; color:var(--muted); margin-bottom:16px;">
+        As required by Apple, the following categories of data are collected by this application.
+      </p>
+      <div class="nutrition-grid">
+        <div class="nutrition-card">
+          <span class="icon">👤</span>
+          <h3>User Account</h3>
+          <span class="tag tag-linked">Linked to Identity</span>
+          <ul>
+            <li>Full name</li>
+            <li>Email address</li>
+            <li>Phone number</li>
+            <li>Postal address</li>
+            <li>Password (encrypted)</li>
+            <li>Profile photo</li>
+          </ul>
+        </div>
+        <div class="nutrition-card yellow">
+          <span class="icon">📷</span>
+          <h3>Photos / Camera</h3>
+          <span class="tag tag-linked">Linked to Identity</span>
+          <ul>
+            <li>Profile photo (user-uploaded)</li>
+            <li>Camera access for photos only</li>
+            <li>No photos stored outside profile</li>
+          </ul>
+        </div>
+        <div class="nutrition-card green">
+          <span class="icon">📊</span>
+          <h3>Analytics</h3>
+          <span class="tag tag-unlinked">Not Linked to Identity</span>
+          <ul>
+            <li>Usage events (Firebase)</li>
+            <li>App performance data</li>
+            <li>Crash reports</li>
+            <li>Anonymized data only</li>
+          </ul>
+        </div>
+      </div>
+      <div class="highlight green">
+        We collect <strong>no data for advertising purposes</strong>. No data is shared with third parties for commercial use. Children's school data is managed exclusively by the school.
+      </div>
+    </section>
+
+    <div class="toc">
+      <h2>Table of Contents</h2>
+      <ol>
+        <li><a href="#en-p1">Data Controller</a></li>
+        <li><a href="#en-p2">Data We Collect</a></li>
+        <li><a href="#en-p3">User Account Data</a></li>
+        <li><a href="#en-p4">Photos &amp; Camera Access</a></li>
+        <li><a href="#en-p5">Analytics &amp; Performance</a></li>
+        <li><a href="#en-p6">Children's Data (Minors)</a></li>
+        <li><a href="#en-p7">Push Notifications</a></li>
+        <li><a href="#en-p8">Legal Basis for Processing</a></li>
+        <li><a href="#en-p9">Data Sharing</a></li>
+        <li><a href="#en-p10">Data Retention</a></li>
+        <li><a href="#en-p11">Your Rights</a></li>
+        <li><a href="#en-p12">Security</a></li>
+        <li><a href="#en-p13">Policy Updates</a></li>
+        <li><a href="#en-p14">Contact</a></li>
+      </ol>
+    </div>
+
+    <section id="en-p1">
+      <h2><span class="num">1</span> Data Controller</h2>
+      <p><strong>msidcom</strong> is the data controller for personal data collected through the msidcom Parent application. For any privacy-related questions, contact us at: <a href="mailto:support@msidcom.com">support@msidcom.com</a>.</p>
+    </section>
+
+    <section id="en-p2">
+      <h2><span class="num">2</span> Data We Collect</h2>
+      <p>We collect only data that is necessary for the service to function. Data falls into three main categories:</p>
+      <table class="data-table">
+        <thead>
+          <tr><th>Category</th><th>Data Type</th><th>Purpose</th><th>Linked to Identity</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>User Account</strong></td><td>Name, email, phone, address, password, photo</td><td>Authentication &amp; profile</td><td>Yes</td></tr>
+          <tr><td><strong>Photos / Camera</strong></td><td>Profile photo only</td><td>Profile personalization</td><td>Yes</td></tr>
+          <tr><td><strong>Analytics</strong></td><td>Usage events, crashes, performance</td><td>App improvement</td><td>No (anonymized)</td></tr>
+          <tr><td><strong>FCM Token</strong></td><td>Firebase device identifier</td><td>Push notifications</td><td>Linked to account</td></tr>
+          <tr><td><strong>School Data</strong></td><td>Grades, attendance, timetable, messages</td><td>Display academic info</td><td>Managed by school</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="en-p3">
+      <h2><span class="num">3</span> User Account Data</h2>
+      <p>When you use your account, we collect:</p>
+      <ul>
+        <li><strong>Full name</strong>: to identify the user within the app</li>
+        <li><strong>Email address</strong>: for authentication and important communications</li>
+        <li><strong>Phone number</strong>: for emergency contacts and SMS notifications</li>
+        <li><strong>Postal address</strong>: optionally provided for the profile</li>
+        <li><strong>Password</strong>: stored as a salted hash, never in plain text</li>
+        <li><strong>Profile photo</strong>: voluntarily uploaded by the user</li>
+      </ul>
+      <div class="highlight">
+        This data is used <strong>exclusively</strong> to provide the service and is never used for advertising or commercial profiling.
+      </div>
+    </section>
+
+    <section id="en-p4">
+      <h2><span class="num">4</span> Photos &amp; Camera Access</h2>
+      <p>The app may request access to your camera and photo library <strong>only</strong> for the following purpose:</p>
+      <ul>
+        <li>Updating your user profile photo</li>
+      </ul>
+      <p>We never access the camera in the background. Access is triggered exclusively by an explicit user action. The uploaded profile photo is stored on msidcom's secure servers and is not shared with third parties.</p>
+      <div class="highlight warn">
+        You can revoke camera access at any time via your iOS/Android device settings without affecting other app features.
+      </div>
+    </section>
+
+    <section id="en-p5">
+      <h2><span class="num">5</span> Analytics &amp; Performance</h2>
+      <p>We use <strong>Firebase Analytics</strong> (Google) to collect anonymized usage data to improve the app. Data collected includes:</p>
+      <ul>
+        <li>Usage events (screens visited, actions taken)</li>
+        <li>Crash reports (Crashlytics)</li>
+        <li>App performance (load times, network errors)</li>
+        <li>Device info: model, OS version, language (anonymized)</li>
+      </ul>
+      <div class="highlight green">
+        This data is <strong>anonymized</strong> and cannot be used to personally identify a user. It is never cross-referenced with account data.
+      </div>
+    </section>
+
+    <section id="en-p6">
+      <h2><span class="num">6</span> Children's Data (Minors)</h2>
+      <p>The app displays academic data relating to minors (your children), including grades, attendance, timetables, and teacher notes.</p>
+      <ul>
+        <li>This data is stored and managed by the school, not directly by msidcom</li>
+        <li>msidcom acts as a data processor on behalf of the school</li>
+        <li>We do not collect data about children beyond what is required to display school information</li>
+        <li>Student data is never used for marketing or behavioral analytics</li>
+      </ul>
+    </section>
+
+    <section id="en-p7">
+      <h2><span class="num">7</span> Push Notifications</h2>
+      <p>We use <strong>Firebase Cloud Messaging (FCM)</strong> to send push notifications. A unique token is assigned to your device. This token is linked to your account, used only to route your school's notifications, never shared with advertisers, and deleted on logout or uninstall.</p>
+    </section>
+
+    <section id="en-p8">
+      <h2><span class="num">8</span> Legal Basis for Processing</h2>
+      <ul>
+        <li><strong>Contract performance</strong>: account data needed to provide the service</li>
+        <li><strong>Legitimate interest</strong>: anonymized analytics to improve the app</li>
+        <li><strong>Consent</strong>: camera access and push notifications (granted via device permissions)</li>
+        <li><strong>Legal obligation</strong>: retention of certain data as required by law</li>
+      </ul>
+    </section>
+
+    <section id="en-p9">
+      <h2><span class="num">9</span> Data Sharing</h2>
+      <p>We never sell your personal data. Data may be shared with:</p>
+      <ul>
+        <li><strong>Schools</strong>: data needed for educational service delivery</li>
+        <li><strong>Firebase / Google</strong>: anonymized analytics and push notifications</li>
+        <li><strong>Hosting provider</strong>: secure server storage</li>
+      </ul>
+      <div class="highlight warn">
+        No data is transmitted to advertising networks, data brokers, or any commercial third parties.
+      </div>
+    </section>
+
+    <section id="en-p10">
+      <h2><span class="num">10</span> Data Retention</h2>
+      <ul>
+        <li><strong>Account data</strong>: retained while the account is active; deleted on request or 12 months after school deactivation</li>
+        <li><strong>Profile photos</strong>: deleted when the account is deleted</li>
+        <li><strong>Analytics</strong>: retained 14 months (Firebase default), anonymized</li>
+        <li><strong>FCM tokens</strong>: deleted on logout or uninstall</li>
+        <li><strong>School data</strong>: subject to the school's own retention policy</li>
+      </ul>
+    </section>
+
+    <section id="en-p11">
+      <h2><span class="num">11</span> Your Rights</h2>
+      <ul>
+        <li><strong>Right of access</strong>: obtain a copy of your personal data</li>
+        <li><strong>Right of rectification</strong>: correct inaccurate data</li>
+        <li><strong>Right to erasure</strong>: request deletion of your account and data</li>
+        <li><strong>Right to object</strong>: object to certain processing activities</li>
+        <li><strong>Right to portability</strong>: receive your data in a structured format</li>
+      </ul>
+      <p>To exercise these rights: <a href="mailto:support@msidcom.com">support@msidcom.com</a></p>
+    </section>
+
+    <section id="en-p12">
+      <h2><span class="num">12</span> Security</h2>
+      <ul>
+        <li>Encrypted transmission via <strong>HTTPS/TLS</strong></li>
+        <li>Passwords stored as salted hashes (never plain text)</li>
+        <li>Access restricted to authorized personnel only</li>
+        <li>Token-based authentication (JWT) with expiry</li>
+      </ul>
+    </section>
+
+    <section id="en-p13">
+      <h2><span class="num">13</span> Policy Updates</h2>
+      <p>We may update this policy at any time. The effective date will be shown at the top. For material changes, we will notify you via an in-app notification.</p>
+    </section>
+
+    <section id="en-p14">
+      <h2><span class="num">14</span> Contact</h2>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:support@msidcom.com">support@msidcom.com</a></li>
+        <li><strong>Website:</strong> <a href="https://msidcom.com" target="_blank" rel="noopener">https://msidcom.com</a></li>
+      </ul>
+    </section>
+
+  </div><!-- /lang-en -->
+
+
+  <!-- ══════════════════════════════════════
+       ARABIC
+  ══════════════════════════════════════ -->
+  <div id="lang-ar" lang="ar" style="display:none;">
+
+    <section style="border-color: #bfdbfe;">
+      <h2 style="color:#1d4ed8; font-size:1rem; text-transform:uppercase; letter-spacing:.6px;">
+        البيانات المجمّعة — ملخص App Store (Apple)
+      </h2>
+      <p style="font-size:.88rem; color:var(--muted); margin-bottom:16px;">
+        وفقًا لمتطلبات Apple، فيما يلي فئات البيانات التي يجمعها هذا التطبيق وأغراض استخدامها.
+      </p>
+      <div class="nutrition-grid">
+        <div class="nutrition-card">
+          <span class="icon">👤</span>
+          <h3>حساب المستخدم</h3>
+          <span class="tag tag-linked">مرتبط بالهوية</span>
+          <ul>
+            <li>الاسم الكامل</li>
+            <li>البريد الإلكتروني</li>
+            <li>رقم الهاتف</li>
+            <li>العنوان البريدي</li>
+            <li>كلمة المرور (مشفّرة)</li>
+            <li>صورة الملف الشخصي</li>
+          </ul>
+        </div>
+        <div class="nutrition-card yellow">
+          <span class="icon">📷</span>
+          <h3>الصور / الكاميرا</h3>
+          <span class="tag tag-linked">مرتبط بالهوية</span>
+          <ul>
+            <li>صورة الملف الشخصي فقط</li>
+            <li>وصول الكاميرا للتصوير فحسب</li>
+            <li>لا تُخزَّن صور خارج الملف</li>
+          </ul>
+        </div>
+        <div class="nutrition-card green">
+          <span class="icon">📊</span>
+          <h3>التحليلات</h3>
+          <span class="tag tag-unlinked">غير مرتبط بالهوية</span>
+          <ul>
+            <li>أحداث الاستخدام (Firebase)</li>
+            <li>أداء التطبيق</li>
+            <li>تقارير الأعطال</li>
+            <li>بيانات مجهولة الهوية</li>
+          </ul>
+        </div>
+      </div>
+      <div class="highlight green">
+        لا نجمع <strong>أي بيانات لأغراض إعلانية</strong>. لا تُشارَك البيانات مع أطراف ثالثة لأغراض تجارية. تُدار البيانات الدراسية للأطفال حصريًا من قِبل المؤسسة التعليمية.
+      </div>
+    </section>
+
+    <div class="toc">
+      <h2>فهرس المحتويات</h2>
+      <ol>
+        <li><a href="#ar-p1">المسؤول عن معالجة البيانات</a></li>
+        <li><a href="#ar-p2">البيانات التي نجمعها</a></li>
+        <li><a href="#ar-p3">بيانات حساب المستخدم</a></li>
+        <li><a href="#ar-p4">الصور والوصول إلى الكاميرا</a></li>
+        <li><a href="#ar-p5">التحليلات والأداء</a></li>
+        <li><a href="#ar-p6">بيانات الأطفال (القاصرون)</a></li>
+        <li><a href="#ar-p7">الإشعارات الفورية</a></li>
+        <li><a href="#ar-p8">الأساس القانوني للمعالجة</a></li>
+        <li><a href="#ar-p9">مشاركة البيانات</a></li>
+        <li><a href="#ar-p10">الاحتفاظ بالبيانات</a></li>
+        <li><a href="#ar-p11">حقوقك</a></li>
+        <li><a href="#ar-p12">الأمان</a></li>
+        <li><a href="#ar-p13">تحديثات السياسة</a></li>
+        <li><a href="#ar-p14">التواصل معنا</a></li>
+      </ol>
+    </div>
+
+    <section id="ar-p1">
+      <h2><span class="num">١</span> المسؤول عن معالجة البيانات</h2>
+      <p><strong>msidcom</strong> هو المسؤول عن معالجة البيانات الشخصية المجمّعة عبر تطبيق msidcom - الولي. لأي استفسار يتعلق بالخصوصية، تواصل معنا على: <a href="mailto:support@msidcom.com">support@msidcom.com</a></p>
+    </section>
+
+    <section id="ar-p2">
+      <h2><span class="num">٢</span> البيانات التي نجمعها</h2>
+      <p>نجمع فقط البيانات الضرورية لتشغيل الخدمة. تنقسم هذه البيانات إلى ثلاث فئات رئيسية:</p>
+      <table class="data-table">
+        <thead>
+          <tr><th>الفئة</th><th>نوع البيانات</th><th>الغرض</th><th>مرتبط بالهوية</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>حساب المستخدم</strong></td><td>الاسم، البريد، الهاتف، العنوان، كلمة المرور، الصورة</td><td>المصادقة والملف الشخصي</td><td>نعم</td></tr>
+          <tr><td><strong>الصور / الكاميرا</strong></td><td>صورة الملف الشخصي فقط</td><td>تخصيص الملف</td><td>نعم</td></tr>
+          <tr><td><strong>التحليلات</strong></td><td>أحداث الاستخدام، الأعطال، الأداء</td><td>تحسين التطبيق</td><td>لا (مجهولة)</td></tr>
+          <tr><td><strong>رمز FCM</strong></td><td>معرّف جهاز Firebase</td><td>الإشعارات الفورية</td><td>مرتبط بالحساب</td></tr>
+          <tr><td><strong>البيانات المدرسية</strong></td><td>النقاط، الغيابات، الجدول، الرسائل</td><td>عرض المعلومات الدراسية</td><td>تديرها المدرسة</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="ar-p3">
+      <h2><span class="num">٣</span> بيانات حساب المستخدم</h2>
+      <ul>
+        <li><strong>الاسم الكامل</strong>: لتعريف المستخدم داخل التطبيق</li>
+        <li><strong>البريد الإلكتروني</strong>: للمصادقة والتواصل المهم</li>
+        <li><strong>رقم الهاتف</strong>: لجهات الاتصال الطارئة وإشعارات SMS</li>
+        <li><strong>العنوان البريدي</strong>: اختياري في الملف الشخصي</li>
+        <li><strong>كلمة المرور</strong>: مخزنة كقيمة مجزأة مشفرة، وليس بنص عادي أبدًا</li>
+        <li><strong>صورة الملف الشخصي</strong>: يرفعها المستخدم طوعًا</li>
+      </ul>
+      <div class="highlight">
+        تُستخدم هذه البيانات <strong>حصريًا</strong> لتقديم الخدمة ولا تُستخدم أبدًا لأغراض إعلانية.
+      </div>
+    </section>
+
+    <section id="ar-p4">
+      <h2><span class="num">٤</span> الصور والوصول إلى الكاميرا</h2>
+      <p>قد يطلب التطبيق الوصول إلى الكاميرا وألبوم الصور <strong>فقط</strong> لتحديث صورة الملف الشخصي. لا نصل إلى الكاميرا في الخلفية مطلقًا. يتم تخزين الصورة المرفوعة على خوادمنا الآمنة ولا تُشارَك مع أطراف ثالثة.</p>
+      <div class="highlight warn">
+        يمكنك إلغاء الوصول إلى الكاميرا في أي وقت من إعدادات جهازك دون التأثير على بقية وظائف التطبيق.
+      </div>
+    </section>
+
+    <section id="ar-p5">
+      <h2><span class="num">٥</span> التحليلات والأداء</h2>
+      <p>نستخدم <strong>Firebase Analytics</strong> (Google) لجمع بيانات مجهولة الهوية بهدف تحسين التطبيق. تشمل البيانات المجمّعة: أحداث الاستخدام، تقارير الأعطال، بيانات الأداء، ومعلومات الجهاز (مجهولة الهوية).</p>
+      <div class="highlight green">
+        هذه البيانات <strong>مجهولة الهوية</strong> ولا يمكن استخدامها للتعرف على المستخدم شخصيًا. ولا تُدمج مطلقًا مع بيانات الحساب.
+      </div>
+    </section>
+
+    <section id="ar-p6">
+      <h2><span class="num">٦</span> بيانات الأطفال (القاصرون)</h2>
+      <ul>
+        <li>تُخزَّن هذه البيانات وتُدار من قِبل المؤسسة التعليمية، لا من قِبل msidcom مباشرة</li>
+        <li>تعمل msidcom كمعالج فرعي للبيانات نيابةً عن المدرسة</li>
+        <li>لا نجمع بيانات الأطفال لأغراض التسويق أو التحليل السلوكي</li>
+        <li>يجب توجيه أي طلب لتصحيح البيانات الدراسية إلى المؤسسة التعليمية مباشرة</li>
+      </ul>
+    </section>
+
+    <section id="ar-p7">
+      <h2><span class="num">٧</span> الإشعارات الفورية</h2>
+      <p>نستخدم <strong>Firebase Cloud Messaging (FCM)</strong> لإرسال الإشعارات. يُخصَّص رمز فريد لجهازك مرتبط بحسابك، ويُستخدم فقط لتوجيه إشعارات مدرستك، ويُحذف عند تسجيل الخروج أو إلغاء التثبيت.</p>
+    </section>
+
+    <section id="ar-p8">
+      <h2><span class="num">٨</span> الأساس القانوني للمعالجة</h2>
+      <ul>
+        <li><strong>تنفيذ العقد</strong>: بيانات الحساب اللازمة لتقديم الخدمة</li>
+        <li><strong>المصلحة المشروعة</strong>: تحليلات مجهولة لتحسين التطبيق</li>
+        <li><strong>الموافقة</strong>: الوصول للكاميرا والإشعارات (عبر أذونات الجهاز)</li>
+        <li><strong>الالتزام القانوني</strong>: الاحتفاظ ببعض البيانات وفق القوانين المعمول بها</li>
+      </ul>
+    </section>
+
+    <section id="ar-p9">
+      <h2><span class="num">٩</span> مشاركة البيانات</h2>
+      <p>لا نبيع بياناتك الشخصية أبدًا. قد نشارك البيانات مع: المؤسسات التعليمية، Firebase/Google (تحليلات ومجهولة)، ومزود الاستضافة لحفظ البيانات بأمان.</p>
+      <div class="highlight warn">
+        لا تُرسَل أي بيانات إلى شبكات إعلانية أو وسطاء بيانات أو أي جهة تجارية ثالثة.
+      </div>
+    </section>
+
+    <section id="ar-p10">
+      <h2><span class="num">١٠</span> الاحتفاظ بالبيانات</h2>
+      <ul>
+        <li><strong>بيانات الحساب</strong>: محتفظ بها طالما الحساب نشط؛ تُحذف بناءً على الطلب أو بعد 12 شهرًا من تعطيل الحساب</li>
+        <li><strong>صور الملف الشخصي</strong>: تُحذف عند حذف الحساب</li>
+        <li><strong>التحليلات</strong>: 14 شهرًا (سياسة Firebase الافتراضية)، مجهولة الهوية</li>
+        <li><strong>رموز FCM</strong>: تُحذف عند تسجيل الخروج أو إلغاء التثبيت</li>
+      </ul>
+    </section>
+
+    <section id="ar-p11">
+      <h2><span class="num">١١</span> حقوقك</h2>
+      <ul>
+        <li><strong>حق الوصول</strong>: الحصول على نسخة من بياناتك الشخصية</li>
+        <li><strong>حق التصحيح</strong>: تصحيح بيانات غير دقيقة</li>
+        <li><strong>حق الحذف</strong>: طلب حذف حسابك وبياناتك</li>
+        <li><strong>حق الاعتراض</strong>: الاعتراض على بعض أوجه المعالجة</li>
+        <li><strong>حق نقل البيانات</strong>: استلام بياناتك بصيغة منظمة</li>
+      </ul>
+      <p>لممارسة هذه الحقوق: <a href="mailto:support@msidcom.com">support@msidcom.com</a></p>
+    </section>
+
+    <section id="ar-p12">
+      <h2><span class="num">١٢</span> الأمان</h2>
+      <ul>
+        <li>نقل مشفّر عبر <strong>HTTPS/TLS</strong></li>
+        <li>كلمات المرور مخزنة كقيم مجزأة (ليس نصًا عاديًا)</li>
+        <li>الوصول للبيانات مقتصر على الموظفين المعتمدين</li>
+        <li>مصادقة قائمة على الرمز (JWT) مع انتهاء صلاحية</li>
+      </ul>
+    </section>
+
+    <section id="ar-p13">
+      <h2><span class="num">١٣</span> تحديثات السياسة</h2>
+      <p>يحق لنا تحديث هذه السياسة في أي وقت. سيُشار إلى تاريخ التحديث في أعلى الصفحة. في حالة التغييرات الجوهرية، سنخطرك عبر إشعار داخل التطبيق.</p>
+    </section>
+
+    <section id="ar-p14">
+      <h2><span class="num">١٤</span> التواصل معنا</h2>
+      <ul>
+        <li><strong>البريد الإلكتروني:</strong> <a href="mailto:support@msidcom.com">support@msidcom.com</a></li>
+        <li><strong>الموقع:</strong> <a href="https://msidcom.com" target="_blank" rel="noopener">https://msidcom.com</a></li>
+      </ul>
+    </section>
+
+  </div><!-- /lang-ar -->
+
+</div><!-- /container -->
+
+<footer>
+  <p>© 2026 msidcom. All rights reserved. — <a href="terms.html">Terms &amp; Conditions</a></p>
+  <p style="margin-top:6px;">
+    <a href="https://msidcom.com" target="_blank" rel="noopener">msidcom.com</a>
+    &nbsp;·&nbsp;
+    <a href="mailto:support@msidcom.com">support@msidcom.com</a>
+  </p>
+</footer>
+
+<script>
+  function setLang(lang) {
+    ['en','fr','ar'].forEach(l => {
+      document.getElementById('lang-' + l).style.display = (l === lang) ? '' : 'none';
+    });
+    document.querySelectorAll('.lang-bar button').forEach(btn => {
+      const map = { en: 'english', fr: 'français', ar: 'عربية' };
+      btn.classList.toggle('active', btn.textContent.toLowerCase().includes(map[lang]));
+    });
+    document.getElementById('root').setAttribute('lang', lang === 'ar' ? 'ar' : lang);
+    document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    document.documentElement.setAttribute('lang', lang === 'ar' ? 'ar' : lang);
+  }
+</script>
+
+</body>
+</html>
